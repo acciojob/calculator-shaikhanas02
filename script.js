@@ -1,20 +1,21 @@
-//your code here
-let string = "";
-let buttons = document.querySelectorAll('.button');
-Array.from(buttons).forEach((button)=>{
-  button.addEventListener('click', (e)=>{
-    if(e.target.innerHTML == '='){
-      string = eval(string);
-      document.querySelector('input').value = string;
-    }
-    else if(e.target.innerHTML == 'C'){
-      string = ""
-      document.querySelector('input').value = string;
-    }
-    else{ 
-    console.log(e.target)
-    string = string + e.target.innerHTML;
-    document.querySelector('input').value = string;
-      }
-  })
-})
+let ans1 ="";
+let num ="";
+function add(value){
+    console.log(value);
+    num=num+value;
+    document.getElementById('input').value=num;
+
+}
+
+
+function ans(){
+    ans1=eval(num);
+    document.getElementById('input').value=ans1;
+    ans1="";
+    num="";
+}
+
+function clear(){
+    num="";
+    document.getElementById('input').value="";
+}
